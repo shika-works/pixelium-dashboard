@@ -60,6 +60,26 @@ pnpm build
 pnpm preview
 ```
 
+## Deploy to GitHub Pages
+
+Live site: <https://shika-works.github.io/pixelium-dashboard/>
+
+1. Push to the `main` branch — the GitHub Actions workflow
+   (`.github/workflows/deploy.yml`) builds the app and deploys `dist/` to
+   Pages automatically.
+2. Make sure GitHub Pages is enabled for the repo:
+   **Settings → Pages → Source: GitHub Actions**.
+
+Notes:
+
+- `vite.config.ts` sets `base: '/pixelium-dashboard/'` for the project-site URL.
+  Change or remove it when deploying elsewhere (e.g. a custom domain).
+- The build step copies `dist/index.html` to `dist/404.html` so client-side
+  routes like `/pixelium-dashboard/users` work on refresh (GitHub Pages has no
+  SPA rewrite).
+- The component library `@pixelium/web-vue@0.2.0-alpha` is published on npm,
+  so `pnpm install` works without local linking.
+
 ## Project Structure
 
 ```
