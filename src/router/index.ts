@@ -59,8 +59,12 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 
+// GitHub Pages serves the app under a sub-path (/pixelium-dashboard/), which is
+// configured as Vite's `base`. The router must use the same base, otherwise the
+// initial URL like `/pixelium-dashboard/` matches no route and the page renders
+// blank. `import.meta.env.BASE_URL` equals Vite's `base` in both dev and prod.
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 
