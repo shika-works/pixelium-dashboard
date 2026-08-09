@@ -4,6 +4,11 @@ A pixel-art admin dashboard built with **Vue 3 + TypeScript + Vite** and the
 [PixeliumDesign](https://github.com/shika-works/pixelium-design) component library
 (`@pixelium/web-vue`), which is linked locally via pnpm.
 
+## Links
+
+- **PixeliumDesign component library**: <https://github.com/shika-works/pixelium-design>
+- **PixeliumDesign live demo**: <https://shika-works.github.io/pixelium-design/>
+
 ## Features
 
 - Retro pixel-art UI powered by `@pixelium/web-vue`

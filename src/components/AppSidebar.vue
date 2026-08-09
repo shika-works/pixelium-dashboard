@@ -8,6 +8,9 @@ import {
   IconAnalytics,
   IconCart,
   IconDashboard,
+  IconExternalLink,
+  IconGithub2,
+  IconLink,
   IconMessage,
   IconPixelarticons,
   IconShield,
@@ -25,7 +28,7 @@ const route = useRoute()
 const router = useRouter()
 
 const activeKey = ref<string>(route.path)
-const expandedKeys = ref<(string | number | symbol)[]>(['users', 'orders', 'components'])
+const expandedKeys = ref<(string | number | symbol)[]>(['users', 'orders', 'components', 'links'])
 
 watch(
   () => route.path,
@@ -35,9 +38,12 @@ watch(
 )
 
 function onMenuSelect(index: string | number | symbol) {
-  if (typeof index === 'string') {
-    router.push(index)
+  if (typeof index !== 'string') return
+  if (/^https?:\/\//.test(index)) {
+    window.open(index, '_blank', 'noopener')
+    return
   }
+  router.push(index)
 }
 </script>
 
@@ -103,6 +109,18 @@ function onMenuSelect(index: string | number | symbol) {
         <template #icon><IconSliders /></template>
         <span>{{ t('nav.settings') }}</span>
       </px-menu-item>
+
+      <px-submenu index="links" :label="t('nav.links')">
+        <template #icon><IconLink /></template>
+        <px-menu-item index="https://github.com/shika-works/pixelium-design">
+          <template #icon><IconGithub2 /></template>
+          <span>{{ t('nav.libraryRepo') }}</span>
+        </px-menu-item>
+        <px-menu-item index="https://shika-works.github.io/pixelium-design/">
+          <template #icon><IconExternalLink /></template>
+          <span>{{ t('nav.librarySite') }}</span>
+        </px-menu-item>
+      </px-submenu>
     </px-menu>
   </div>
 </template>

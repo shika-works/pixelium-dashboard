@@ -17,6 +17,9 @@ export default {
     components: 'Component Examples',
     formControls: 'Form Examples',
     dialogs: 'Dialogs',
+    links: 'Links',
+    libraryRepo: 'Component Library',
+    librarySite: 'Component Library Site',
   },
   topbar: {
     searchPlaceholder: 'Search anything...',

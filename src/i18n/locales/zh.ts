@@ -17,6 +17,9 @@ export default {
     components: '组件示例',
     formControls: '表单示例',
     dialogs: '弹窗示例',
+    links: '相关链接',
+    libraryRepo: '组件库',
+    librarySite: '组件库主页',
   },
   topbar: {
     searchPlaceholder: '搜索...',
