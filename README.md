@@ -17,7 +17,7 @@ A pixel-art admin dashboard built with **Vue 3 + TypeScript + Vite** and the
 - i18n with Chinese (`zh`) and English (`en`) support
 - Dashboard overview with animated counters, ECharts charts, tables and timeline
 - Progress bars keep the pixel-art look via the component library's `px-progress`
-- Pages: Dashboard, Analytics, Users (search / filter / selection / pagination / dialogs), Orders, Settings
+- Pages: Dashboard, Analytics, Users, Roles & Permissions, Orders, Form Examples, Dialogs, Settings
 - `vue-router` based routing with lazy-loaded views
 
 ## Getting Started
@@ -78,9 +78,13 @@ src/
 ├── main.ts                 # entry: registers plugin, i18n, router
 ├── App.vue                 # root component (router-view)
 ├── router/index.ts         # routes
-├── i18n/                   # vue-i18n instance + locales (en / zh)
+├── i18n/
+│   ├── index.ts            # vue-i18n instance (locale detection & switching)
+│   └── locales/            # messages (en / zh)
 ├── styles/global.css       # global styles (layout helpers)
-├── composables/useAppTheme.ts
+├── composables/
+│   ├── useAppTheme.ts      # light/dark theme state (persisted in localStorage)
+│   └── chartPalette.ts     # ECharts palette colors for light/dark mode
 ├── layouts/DashboardLayout.vue
 ├── components/
 │   ├── AppSidebar.vue      # logo + px-menu navigation
@@ -90,12 +94,13 @@ src/
 │   ├── EChartLine.vue      # ECharts line / area chart, multi-series
 │   └── EChartDonut.vue     # ECharts donut chart with legend
 └── views/
-    ├── DashboardView.vue
-    ├── AnalyticsView.vue
-    ├── UsersView.vue
-    ├── RolesView.vue     # roles & permissions
-    ├── OrdersView.vue
-    ├── SettingsView.vue
-    └── AddProductView.vue # add-product form (showcases all form controls)
+    ├── DashboardView.vue   # overview: stat cards, charts, tables, timeline
+    ├── AnalyticsView.vue   # traffic / device / browser / goal analytics
+    ├── UsersView.vue       # user table with search, filters, pagination, dialogs
+    ├── RolesView.vue       # roles & permissions editor
+    ├── OrdersView.vue      # order list with search, filters, pagination
+    ├── FormView.vue        # add-product form (showcases all form controls)
+    ├── DialogsView.vue     # dialog & drawer examples
+    └── SettingsView.vue    # profile / security / notifications / appearance tabs
 ```
 
