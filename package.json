@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pixelium/web-vue": "0.2.0-alpha",
+    "@pixelium/web-vue": "0.2.0-beta",
     "echarts": "^6.1.0",
     "vue": "^3.5.40",
     "vue-echarts": "^8.1.0",

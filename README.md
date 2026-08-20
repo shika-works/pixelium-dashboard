@@ -2,7 +2,7 @@
 
 A pixel-art admin dashboard built with **Vue 3 + TypeScript + Vite** and the
 [PixeliumDesign](https://github.com/shika-works/pixelium-design) component library
-(`@pixelium/web-vue`), which is linked locally via pnpm.
+(`@pixelium/web-vue`), installed from the published npm package.
 
 ## Links
 
@@ -24,32 +24,18 @@ A pixel-art admin dashboard built with **Vue 3 + TypeScript + Vite** and the
 
 Requirements: Node `>=23.11.1`, pnpm `>=10`.
 
-### 1. Link the component library
+### 1. Install the component library
 
-The component library source lives outside this repo (e.g.
-`../pixelium-design/packages/web-vue`). Link it into this project before
-installing:
+The component library `@pixelium/web-vue` is installed from the published npm
+package, so `pnpm install` works out of the box.
 
-```bash
-# from the library package directory
-cd ../pixelium-design/packages/web-vue
-pnpm link
+To develop against a local source build of the library (e.g.
+`../pixelium-design/packages/web-vue`), add a `pnpm-workspace.yaml` override:
 
-# from this project directory
-cd ../pixelium-dashboard
-pnpm link @pixelium/web-vue
+```yaml
+overrides:
+  '@pixelium/web-vue': link:../pixelium-design/packages/web-vue
 ```
-
-> On Windows, `pnpm link @pixelium/web-vue` may write a malformed dependency
-> entry due to a pnpm bug with scoped packages. If that happens, link the
-> directory directly instead (equivalent result):
->
-> ```bash
-> pnpm link "../pixelium-design/packages/web-vue"
-> ```
-
-The dependency is recorded in `package.json` as
-`"@pixelium/web-vue": "link:../pixelium-design/packages/web-vue"`.
 
 ### 2. Install & run
 
@@ -82,7 +68,7 @@ Notes:
 - The build step copies `dist/index.html` to `dist/404.html` so client-side
   routes like `/pixelium-dashboard/users` work on refresh (GitHub Pages has no
   SPA rewrite).
-- The component library `@pixelium/web-vue@0.2.0-alpha` is published on npm,
+- The component library `@pixelium/web-vue@0.2.0-beta` is published on npm,
   so `pnpm install` works without local linking.
 
 ## Project Structure

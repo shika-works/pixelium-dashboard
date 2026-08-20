@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@pixelium/web-vue':
-        specifier: 0.2.0-alpha
-        version: 0.2.0-alpha(vue-router@4.6.4(vue@3.5.41(typescript@6.0.3)))(vue@3.5.41(typescript@6.0.3))
+        specifier: 0.2.0-beta
+        version: 0.2.0-beta(vue-router@4.6.4(vue@3.5.41(typescript@6.0.3)))(vue@3.5.41(typescript@6.0.3))
       echarts:
         specifier: ^6.1.0
         version: 6.1.0
@@ -96,8 +96,8 @@ packages:
   '@oxc-project/types@0.143.0':
     resolution: {integrity: sha512-u6JZdLBTLotrNC9Vd6vPssINdzcCzleKAH6EJKImQb7GtYvX5keN2dxkoK44stCc4tffE6QQRtZTXVSzsLUlWA==}
 
-  '@pixelium/web-vue@0.2.0-alpha':
-    resolution: {integrity: sha512-47XuOPxOlckH8BKLHsCcXj94NJSkNQfX+VcI4YlAHo43uXfgYqx4Pj6yKyfOdNxrnfsTp6yv4oFijGm0vXUxqw==}
+  '@pixelium/web-vue@0.2.0-beta':
+    resolution: {integrity: sha512-k+QfUor3644uD87xoLLZb8ITEMeIKOVir1Hh+s5OOwoaRpQSt3v6CdBzwdyeceAaMErAeSdJrRYgfAPz3OkGLQ==}
     peerDependencies:
       vue: ^3.5.17
       vue-router: ^4.0.13
@@ -548,7 +548,7 @@ snapshots:
 
   '@oxc-project/types@0.143.0': {}
 
-  '@pixelium/web-vue@0.2.0-alpha(vue-router@4.6.4(vue@3.5.41(typescript@6.0.3)))(vue@3.5.41(typescript@6.0.3))':
+  '@pixelium/web-vue@0.2.0-beta(vue-router@4.6.4(vue@3.5.41(typescript@6.0.3)))(vue@3.5.41(typescript@6.0.3))':
     dependencies:
       '@floating-ui/dom': 1.8.0
       mitt: 3.0.1

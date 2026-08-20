@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 import { use } from 'echarts/core'
 import { PieChart } from 'echarts/charts'
-import { LegendComponent, TooltipComponent } from 'echarts/components'
+import { GraphicComponent, LegendComponent, TooltipComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
 import type { EChartsOption } from 'echarts'
 
@@ -12,7 +12,7 @@ import VChart from 'vue-echarts'
 import { useAppTheme } from '@/composables/useAppTheme'
 import { getChartPalette } from '@/composables/chartPalette'
 
-use([PieChart, LegendComponent, TooltipComponent, CanvasRenderer])
+use([PieChart, GraphicComponent, LegendComponent, TooltipComponent, CanvasRenderer])
 
 interface DonutDatum {
   label: string
